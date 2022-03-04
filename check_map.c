@@ -6,16 +6,14 @@
 /*   By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 22:43:35 by alida-si          #+#    #+#             */
-/*   Updated: 2022/03/01 18:22:04 by alida-si         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:09:07 by alida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	valid_map(t_data data, int argc, char *argv)
+int	valid_map(t_data data)
 {
-	if (!(check_args(argc, argv)))
-		return (0);
 	if (!(check_items(data)))
 	{
 		free_matrix(data.map);
