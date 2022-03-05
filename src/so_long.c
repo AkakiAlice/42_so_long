@@ -6,7 +6,7 @@
 /*   By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:38:58 by alida-si          #+#    #+#             */
-/*   Updated: 2022/03/04 18:12:44 by alida-si         ###   ########.fr       */
+/*   Updated: 2022/03/05 21:16:52 by alida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	main(int argc, char *argv[])
 		if (data.map == NULL)
 			return (1);
 		if (!valid_map(data))
-		{
-			free_matrix(data.map);
 			return (1);
-		}
 		init_game(&data);
 		return (0);
 	}

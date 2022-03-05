@@ -6,7 +6,7 @@
 #    By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 19:35:16 by alida-si          #+#    #+#              #
-#    Updated: 2022/02/23 15:33:19 by alida-si         ###   ########.fr        #
+#    Updated: 2022/03/05 05:34:40 by alida-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ SRC	=	ft_isalnum.c \
 		ft_printf.c \
 		itohex.c \
 		utoa.c \
-		ft_itoa.c \
 		ft_printf_utils.c \
 		get_next_line.c \
 		ft_strrncmp.c \

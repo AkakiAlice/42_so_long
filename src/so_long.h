@@ -6,15 +6,14 @@
 /*   By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:02:21 by alida-si          #+#    #+#             */
-/*   Updated: 2022/03/04 20:58:03 by alida-si         ###   ########.fr       */
+/*   Updated: 2022/03/05 20:12:32 by alida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./libft/libft.h"
-# include <fcntl.h>
+# include ".././libft/libft.h"
 # include "mlx.h"
 
 # define EXIT "./imgs/exit.xpm"

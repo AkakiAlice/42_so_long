@@ -6,7 +6,7 @@
 /*   By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 18:08:51 by alida-si          #+#    #+#             */
-/*   Updated: 2022/03/02 18:45:14 by alida-si         ###   ########.fr       */
+/*   Updated: 2022/03/05 06:42:34 by alida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	valid_line(char *temp)
 	}
 	while (temp[i])
 	{
-		if ((temp[i] == '\n') && (temp[++i] == '\n') || temp[j - 1] == '\n')
+		if (((temp[i] == '\n') && (temp[++i] == '\n')) || temp[j - 1] == '\n')
 		{
 			free(temp);
 			ft_printf("Error, unable to create map\n");

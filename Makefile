@@ -6,13 +6,19 @@
 #    By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 21:26:57 by alida-si          #+#    #+#              #
-#    Updated: 2022/03/04 19:29:44 by alida-si         ###   ########.fr        #
+#    Updated: 2022/03/05 20:09:28 by alida-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= so_long
+NAME =		so_long
 
-SRCS	=	so_long.c \
+LIBFT_DIR =	./libft
+LIBFT =		./libft/libft.a
+
+SRC_DIR =	./src
+OBJ_DIR =	./obj
+
+SRC_FILES =	so_long.c \
 			error_msg.c \
 			check_map.c \
 			check_mp_utils_I.c \
@@ -24,23 +30,35 @@ SRCS	=	so_long.c \
 			close.c \
 			load_map.c \
 
-OBJS	= ${SRCS:.c=.o}
+SRC =		$(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJ =		$(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CC		= gcc
+CC =		gcc
+CCFLAGS =	-Wall -Wextra -Werror
+MLXFLAGS =	-lmlx -lXext -lX11
+LIBFLAGS =	-L./libft -lft
 
-CCFLAGS	= -Wall -Wextra -Werror -g
+RM =		rm -f
+RM_DIR =	rm -rf
 
-RM		= rm -f
+all:		$(NAME)
 
-all:		${NAME}
+$(NAME):	$(LIBFT) $(OBJ)
+			$(CC) $(CCFLAGS) -o $(NAME) $(OBJ) $(MLXFLAGS) $(LIBFLAGS)
 
-${NAME}:	${OBJS}
-			${CC} ${CCFLAGS} -o ${NAME} ${OBJS} -lmlx -lXext -lX11 -L./libft -lft
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+				mkdir -p $(OBJ_DIR)
+				$(CC) $(CCFLAGS) -c $< -o $@
+
+$(LIBFT):
+			make -C ./libft
 
 clean:
-			${RM} ${OBJS}
+			make clean -C $(LIBFT_DIR)
+			$(RM_DIR) $(OBJ_DIR)
 
 fclean:		clean
-			${RM} ${NAME}
+			make fclean -C $(LIBFT_DIR)
+			$(RM) $(NAME)
 
 re:			fclean all

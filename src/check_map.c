@@ -6,7 +6,7 @@
 /*   By: alida-si <alida-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 22:43:35 by alida-si          #+#    #+#             */
-/*   Updated: 2022/03/04 18:09:07 by alida-si         ###   ########.fr       */
+/*   Updated: 2022/03/05 21:06:56 by alida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	check_items(t_data data)
 {
 	if (shape_check(data) == 0)
 		return (error_msg("invalid map shape"));
+	if (invalid_char(data) > 0)
+		return (error_msg("the map contains invalid characters"));
+	if (check_walls(data) == 0)
+		return (error_msg("the map must be closed/surrounded by walls"));
 	if (count_item(data, 'P') != 1)
 		return (error_msg("the map must contain 1 player"));
 	if (count_item(data, 'E') != 1)
 		return (error_msg("the map must contain 1 exit"));
 	if (count_item(data, 'C') < 1)
 		return (error_msg("the map must contain at least 1 collectible"));
-	if (check_walls(data) == 0)
-		return (error_msg("the map must be closed/surrounded by walls"));
-	if (invalid_char(data) > 0)
-		return (error_msg("the map contains invalid characters"));
 	return (1);
 }
